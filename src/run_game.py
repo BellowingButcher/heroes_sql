@@ -8,9 +8,9 @@ from make_a_relationship import make_a_relation
 from see_all import see_all
 
 def run_game():
-    choice = input('Thank you for accessing the Super Hero database. Use one of the following keywords to interact with our database: CREATE, UPDATE, DISPATCH, RELATIONS, LEARN, CONNECTIONS, LIST, HELP: ').upper()
+    choice = input('Thank you for accessing the Super Hero database. Use one of the following keywords to interact with our database: CREATE, UPDATE, DISPATCH, RELATIONS, LEARN, CONNECTIONS, LIST, HELP, QUIT: ').upper()
     if choice == 'HELP':
-        print('CREATE - Add a new super hero to the database\nUPDATE - Change the about me of a specific hero\n DISPATCH - Remove hero from the database\nRELATIONS - Display a list of friends and enemies of an entered hero\nLEARN - Learn about a specific hero\nCONNECTIONS - Make a new friend, or enemy\nLIST - See a list of all the heroes in the database\nHELP - See this prompt')
+        print('CREATE - Add a new super hero to the database\nUPDATE - Change the about me of a specific hero\n DISPATCH - Remove hero from the database\nRELATIONS - Display a list of friends and enemies of an entered hero\nLEARN - Learn about a specific hero\nCONNECTIONS - Make a new friend, or enemy\nLIST - See a list of all the heroes in the database\nHELP - See this prompt\nQUIT - you wont')
         onward()
 
     elif choice == 'CREATE':
@@ -34,6 +34,8 @@ def run_game():
     elif choice == 'LIST':
         see_all()
         onward()
+    elif choice == 'QUIT':
+        print('Thank you for coming by.')
     else:
         print("That wasn't a command")
         onward()
@@ -41,7 +43,7 @@ def run_game():
 def onward():
     choice = input('What do you want to do now? ').upper()
     if choice == 'HELP':
-        print('CREATE - Add a new super hero to the database\nUPDATE - Change the about me of a specific hero\n DISPATCH - Remove hero from the database\nRELATIONS - Display a list of friends and enemies of an entered hero\nLEARN - Learn about a specific hero\nCONNECTIONS - Make a new friend, or enemy\nLIST - See a list of all the heroes in the database\nHELP - See this prompt')
+        print('CREATE - Add a new super hero to the database\nUPDATE - Change the about me of a specific hero\n DISPATCH - Remove hero from the database\nRELATIONS - Display a list of friends and enemies of an entered hero\nLEARN - Learn about a specific hero\nCONNECTIONS - Make a new friend, or enemy\nLIST - See a list of all the heroes in the database\nHELP - See this prompt\QUIT - you wont')
     if choice == 'CREATE':
         create()
         onward()
@@ -63,6 +65,8 @@ def onward():
     elif choice == 'LIST':
         see_all()
         onward()
+    elif choice == 'QUIT':
+        print('Thank you for coming by.')
     else:
         print("That wasn't a command")
         onward()
