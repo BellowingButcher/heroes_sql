@@ -4,13 +4,14 @@ from update_about_me import update
 from dispatch_hero import dispatch
 from friends_and_enemies import friends_and_enemies_list
 from learn_about_who import learn_about_who
+from make_a_relationship import make_a_relation
+from see_all import see_all
 
 def run_game():
-    choice = input('Thank you for accessing the Super Hero database.  Here you have the ability to create, update, or dispatch super heroes in our database. If you are wanting to create a super hero, please enter CREATE.  If you want to make changes to a super hero, please enter UPDATE.  If you are wanting to dispatch a hero, please enter DISPATCH.  You also have the option to view a table of friends and enemies. Enter READ for this list. To learn about a character type LEARN. If you are still confused, enter HELP. ' )
-    choice = choice.upper()
+    choice = input('Thank you for accessing the Super Hero database. Use one of the following keywords to interact with our database: CREATE, UPDATE, DISPATCH, RELATIONS, LEARN, CONNECTIONS, LIST, HELP: ').upper()
     if choice == 'HELP':
-        print('Type CREATE, UPDATE, DISPATCH, or READ to make a hero, update a hero, remove a hero, or read a list of friends and enemies for a hero')
-        after_help()
+        print('CREATE - Add a new super hero to the database\nUPDATE - Change the about me of a specific hero\n DISPATCH - Remove hero from the database\nRELATIONS - Display a list of friends and enemies of an entered hero\nLEARN - Learn about a specific hero\nCONNECTIONS - Make a new friend, or enemy\nLIST - See a list of all the heroes in the database\nHELP - See this prompt')
+        onward()
 
     elif choice == 'CREATE':
         create()
@@ -21,38 +22,26 @@ def run_game():
     elif choice == 'DISPATCH':
         dispatch()
         onward()
-    elif choice == 'READ':
+    elif choice == 'RELATIONS':
         friends_and_enemies_list()
         onward()
     elif choice == 'LEARN':
         learn_about_who()
         onward()
-    else:
-        print('I dont know what you want to do. Try HELP again')
-        after_help()
-
-def after_help():
-    choice = input(' ')
-    if choice == 'CREATE':
-        create()
+    elif choice == 'CONNECTIONS':
+        make_a_relation()
         onward()
-    elif choice == 'UPDATE':
-        update()
-        onward()
-    elif choice == 'DISPATCH':
-        dispatch()
-        onward()
-    elif choice == 'READ':
-        friends_and_enemies_list()
-    elif choice == 'LEARN':
-        learn_about_who()
+    elif choice == 'LIST':
+        see_all()
         onward()
     else:
-        print('I dont know what you want to do. Try HELP again')
-        after_help()
+        print("That wasn't a command")
+        onward()
 
 def onward():
-    choice = input('What do you want to do now? ')
+    choice = input('What do you want to do now? ').upper()
+    if choice == 'HELP':
+        print('CREATE - Add a new super hero to the database\nUPDATE - Change the about me of a specific hero\n DISPATCH - Remove hero from the database\nRELATIONS - Display a list of friends and enemies of an entered hero\nLEARN - Learn about a specific hero\nCONNECTIONS - Make a new friend, or enemy\nLIST - See a list of all the heroes in the database\nHELP - See this prompt')
     if choice == 'CREATE':
         create()
         onward()
@@ -62,11 +51,20 @@ def onward():
     elif choice == 'DISPATCH':
         dispatch()
         onward()
-    elif choice == 'READ':
+    elif choice == 'RELATIONS':
         friends_and_enemies_list()
         onward()
+    elif choice == 'LEARN':
+        learn_about_who()
+        onward()
+    elif choice == 'CONNECTIONS':
+        make_a_relation()
+        onward()
+    elif choice == 'LIST':
+        see_all()
+        onward()
     else:
-        print('I dont know what you want to do. Try CREATE, UPDATE, DISPATCH, or READ')
+        print("That wasn't a command")
         onward()
 
 run_game()

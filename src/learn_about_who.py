@@ -13,4 +13,3 @@ def learn_about_who():
     print('Hello my name is ' + result[0][1] + ' and ' + result[0][2])
     print('My story? Sure Ill tell you my story. Listen up!')
     print(result[0][3])
-learn_about_who()

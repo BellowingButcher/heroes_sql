@@ -18,4 +18,3 @@ def make_a_relation():
                     """
 
         execute_query(action,(hero1_id, hero2_id, relationship_type_id,))
-make_a_relation()
