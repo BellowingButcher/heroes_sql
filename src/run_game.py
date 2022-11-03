@@ -11,12 +11,16 @@ def run_game():
 
     elif choice == 'CREATE':
         create()
+        onward()
     elif choice == 'UPDATE':
         update()
+        onward()
     elif choice == 'DISPATCH':
         dispatch()
+        onward()
     elif choice == 'READ':
         friends_and_enemies_list()
+        onward()
     else:
         print('I dont know what you want to do. Try HELP again')
         after_help()
@@ -25,13 +29,35 @@ def after_help():
     choice = input(' ')
     if choice == 'CREATE':
         create()
+        onward()
     elif choice == 'UPDATE':
         update()
+        onward()
     elif choice == 'DISPATCH':
         dispatch()
+        onward()
     elif choice == 'READ':
         friends_and_enemies_list()
     else:
         print('I dont know what you want to do. Try HELP again')
         after_help()
+
+def onward():
+    choice = input('What do you want to do now? ')
+    if choice == 'CREATE':
+        create()
+        onward()
+    elif choice == 'UPDATE':
+        update()
+        onward()
+    elif choice == 'DISPATCH':
+        dispatch()
+        onward()
+    elif choice == 'READ':
+        friends_and_enemies_list()
+        onward()
+    else:
+        print('I dont know what you want to do. Try CREATE, UPDATE, DISPATCH, or READ')
+        onward()
+
 run_game()
