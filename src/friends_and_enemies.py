@@ -14,7 +14,5 @@ def friends_and_enemies_list():
                 ON r.relationship_type_id = rt.id
                     WHERE h1.name = %s"""
     result = execute_query(action, (name,)).fetchall()
-    print(result)
     for x in result:
-        
         print(x[1] + ' is a ' + x[2])
