@@ -13,3 +13,10 @@ from database.connection import execute_query;
 # print('Hello my name is ' + result[0][1] + ' and ' + result[0][2])
 # print('My story? Sure Ill tell you my story. Listen up!')
 # print(result[0][3])
+
+# name = input('Who do you want to dispatch? ')
+# action = """DELETE
+#             FROM heroes
+#             WHERE name = %s
+#             """
+# execute_query(action, (name,))
