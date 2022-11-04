@@ -1,6 +1,11 @@
 from database.connection import execute_query;
 def friends_and_enemies_list():
-    name=input('What is your super name? ')
+    heroes = """SELECT id, name FROM heroes"""
+    heroes_result = execute_query(heroes).fetchall()
+    for x in heroes_result:
+        print("-"+str(x[1]))
+        
+    name=input('Which heroes list do you want to see? The names are case sensitive: ')
     action = """SELECT
                     h1.name,
                     h2.name,
